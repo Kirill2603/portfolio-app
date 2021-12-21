@@ -1,28 +1,46 @@
-import {Canvas, useFrame} from "@react-three/fiber";
-import React, {useRef, useState} from "react";
-import * as THREE from 'three'
-import {OrbitControls, Plane} from "@react-three/drei";
+import {useFrame} from "@react-three/fiber";
+import React, {useRef, useState, Suspense} from "react";
+import {OrbitControls, Plane, Shadow} from "@react-three/drei";
+import {Mesh} from "three";
 
-import pc from '../assets/pc.obj'
+import { useGLTF } from '@react-three/drei'
+
+export function PC({ ...props }) {
+    const group = useRef()
+    const { nodes, materials }: any = useGLTF('/pc.gltf')
+    return (
+        <group ref={group} {...props} dispose={null} position={[0,-0.5,0]} >
+            <mesh geometry={nodes.Cube.geometry} material={materials.Material} scale={0}/>
+            <mesh geometry={nodes.pc.geometry} material={materials.palette} scale={0.5} rotation={[Math.PI / 2, 0, 0]} />
+        </group>
+    )
+}
 
 export function Scene(props: JSX.IntrinsicElements['mesh']) {
 
-    const mesh = useRef<THREE.Mesh>(null!)
+    const mesh = useRef<Mesh>(null!)
+    const shadow = React.useRef<Mesh>(null!)
 
-    useFrame((state, delta) => (mesh.current.rotation.y += 0.005))
+    useFrame((state, delta) =>
+        {
+            shadow.current.scale.x = 6
+            shadow.current.scale.y = 6
+            mesh.current.rotation.y += 0.005
+        }
+    )
 
     return (
         <mesh
             {...props}
             ref={mesh}
         >
-            <sphereBufferGeometry attach="geometry" args={[0.5, 32, 32]} />
-            <meshStandardMaterial attach="material" color="lightblue" roughness={0} metalness={0.1} />
+            <Suspense fallback={null}>
+                <PC/>
+            </Suspense>
 
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
-            <Plane args={[2, 2]} rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
-                <meshBasicMaterial attach="material" color="white" />
-            </Plane>
+            <Shadow ref={shadow} scale={[2, 2, 2]} position-y={-0.51} rotation-x={-Math.PI / 2} />
+
         </mesh>
     )
 }

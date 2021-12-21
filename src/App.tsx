@@ -9,9 +9,9 @@ function App() {
 
 
     return (
-        <div style={{height: '50vh'}}>
+        <div style={{height: '90vh', backgroundColor: 'teal'}}>
             <Canvas  shadows camera={{ position: [-5, 2, 10], fov: 60 }}>
-                <fog attach="fog" args={["white", 0, 40]} />
+                <fog attach="fog" args={['white', 0, 40]} />
                 <ambientLight intensity={0.4} />
                 <directionalLight
                     castShadow
