@@ -5,10 +5,10 @@ function App() {
 
     return (
         <>
-                    <Code colorScheme={"green"} fontSize={'20px'}>
+                    <Code p={2} mb={2} colorScheme={"green"} fontSize={'20px'}>
                         Hello!
                     </Code>
-                    <Code colorScheme={"green"} fontSize={'20px'}>
+                    <Code p={2} mb={2} colorScheme={"green"} fontSize={'20px'}>
                         I am Frontend Developer from Minsk
                     </Code>
                     <Alert status='success' variant='solid'>

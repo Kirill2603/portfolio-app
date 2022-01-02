@@ -10,36 +10,32 @@ export const Header = () => {
 
     return (
         <div>
-            <Flex align={"end"}>
+            <Flex align={"center"}>
 
-                <Spacer/>
 
-                <Box p={2}>
-                    <Text fontSize='3xl' fontWeight={'bold'}>Kirill Radobolsky</Text>
+                <Box >
+                    <Text p={2} fontSize='3xl' fontWeight={'bold'}>Kirill Radobolsky</Text>
                 </Box>
 
                 <Spacer/>
 
-                <Link p={2} fontSize='2xl'>Проекты</Link>
+                <Link p={2} fontSize='2xl'>Projects</Link>
 
                 <Center p={2}>
                     <FaGithub />
                     <Link pl={2} fontSize='2xl'>GitHub</Link>
                 </Center>
 
-
                 <Spacer/>
                 <Spacer/>
 
                 <Stack direction='row' p={2}>
-                    <Button p={2}
+                    <Button
                         onClick={toggleColorMode}
                         leftIcon={<SunIcon/>} variant='solid'>
                         Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
                     </Button>
                 </Stack>
-
-                <Spacer/>
 
             </Flex>
 
