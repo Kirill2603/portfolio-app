@@ -5,8 +5,6 @@ function App() {
 
     return (
         <>
-            <Center>
-                <Stack direction='column' >
                     <Code colorScheme={"green"} fontSize={'20px'}>
                         Hello!
                     </Code>
@@ -25,12 +23,6 @@ function App() {
                         </Box>
                         <Avatar p={0.5} size={"2xl"} src={'https://avatars.githubusercontent.com/u/64753246?v=4'}/>
                     </Flex>
-
-
-                </Stack>
-
-
-            </Center>
 
 
         </>
