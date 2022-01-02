@@ -22,9 +22,6 @@ export const Header = () => {
 
                 <Link p={2} fontSize='2xl'>Проекты</Link>
 
-                <Link p={2} fontSize='2xl'>Посты</Link>
-
-
                 <Center p={2}>
                     <FaGithub />
                     <Link pl={2} fontSize='2xl'>GitHub</Link>
@@ -32,8 +29,9 @@ export const Header = () => {
 
 
                 <Spacer/>
+                <Spacer/>
 
-                <Stack direction='row' >
+                <Stack direction='row' p={2}>
                     <Button p={2}
                         onClick={toggleColorMode}
                         leftIcon={<SunIcon/>} variant='solid'>
