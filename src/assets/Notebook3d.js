@@ -7,13 +7,12 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/pc.gltf')
+  const { nodes, materials } = useGLTF('/notebook3d.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.Cube.geometry} material={materials.Material} />
-      <mesh geometry={nodes.pc.geometry} material={materials.palette} rotation={[Math.PI / 2, 0, 0]} />
+      <mesh geometry={nodes.notebook3d.geometry} material={materials['palette.001']} rotation={[Math.PI / 2, 0, 0]} />
     </group>
   )
 }
 
-useGLTF.preload('/pc.gltf')
+useGLTF.preload('/notebook3d.gltf')

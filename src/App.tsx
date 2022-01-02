@@ -9,9 +9,10 @@ function App() {
 
 
     return (
-        <div style={{height: '50vh', backgroundColor: 'teal'}}>
-            <Canvas  shadows camera={{ position: [-5, 2, 10], fov: 60 }}>
-                <fog attach="fog" args={['white', 0, 40]} />
+        <div >
+            <Canvas  shadows
+                     style={{width: "100%", height: "300px"}}
+                     camera={{ position: [-5, 0, 10], fov: 60 }}>
                 <ambientLight intensity={0.4} />
                 <directionalLight
                     castShadow
@@ -19,14 +20,8 @@ function App() {
                     intensity={1.5}
                     shadow-mapSize-width={1024}
                     shadow-mapSize-height={1024}
-                    shadow-camera-far={50}
-                    shadow-camera-left={-10}
-                    shadow-camera-right={10}
-                    shadow-camera-top={10}
-                    shadow-camera-bottom={-10}
                 />
-                <pointLight position={[-10, 0, -20]} color="red" intensity={2.5} />
-                <pointLight position={[0, -10, 0]} intensity={1.5} />
+
                 <Scene position={[0, 0, 0]} />
             </Canvas>
         </div>
