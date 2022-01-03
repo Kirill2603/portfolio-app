@@ -6,14 +6,17 @@ import { useGLTF } from '@react-three/drei'
 
 export function PC({ ...props }) {
     const group = useRef()
-    const {nodes, materials}: any = useGLTF('/notebook3d.gltf')
+    const { nodes, materials }: any = useGLTF('/notebook3dnew.gltf')
     return (
         <group ref={group} {...props} dispose={null}>
-            <mesh geometry={nodes.notebook3d.geometry}
-                  scale={[0.5,0.5,0.5]}
-                  position={[0,-3,0]}
-                  material={materials['palette.001']}
-                  rotation={[Math.PI / 2, 0, 0]}/>
+            <group
+                scale={[0.5,0.5,0.5]}
+                position={[0,-3,0]}
+                rotation={[Math.PI / 2, 0, 0]}>
+                <mesh geometry={nodes.notebook3d001.geometry} material={materials['Material.003']} />
+                <mesh geometry={nodes.notebook3d001_1.geometry} material={materials['Material.005']} />
+                <mesh geometry={nodes.notebook3d001_2.geometry} material={materials.Material} />
+            </group>
         </group>
     )
 }
