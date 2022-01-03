@@ -16,7 +16,7 @@ import {
     useMediaQuery,
 } from '@chakra-ui/react'
 import {
-    ChevronDownIcon,
+    HamburgerIcon,
     SunIcon
 } from "@chakra-ui/icons";
 import {FaGithub} from "react-icons/fa";
@@ -30,16 +30,18 @@ export const Header = () => {
 
     if (isLargerThan1280) {
         return (<div>
-            <Flex justify={"center"}>
+            <Flex justify={"center"}
+                  css={{ backdropFilter: 'blur(10px)' }}
+                  position={"fixed"}
+                  zIndex={1}
+                  w={'50vw'}
+            >
 
                 <Box >
                     <Text p={2} fontSize='3xl' fontWeight={'bold'}>Kirill Radobolsky</Text>
                 </Box>
 
                 <Spacer/>
-
-
-
 
                 <Link p={2} fontSize='2xl'>Projects</Link>
 
@@ -65,7 +67,11 @@ export const Header = () => {
     }
     else {return (
        <>
-           <Flex justify={"space-between"}>
+           <Flex justify={"space-between"}
+                 css={{ backdropFilter: 'blur(10px)' }}
+                 position={"fixed"}
+                 zIndex={1}
+                 w={'90vw'}>
 
            <Box >
                <Text p={2} fontSize='xl' fontWeight={'bold'} >Kirill Radobolsky</Text>
@@ -88,7 +94,7 @@ export const Header = () => {
                        _expanded={{ bg: 'blue.400' }}
                        _focus={{ boxShadow: 'outline' }}
                    >
-                       <ChevronDownIcon />
+                       <HamburgerIcon />
                    </MenuButton>
                    <MenuList>
                        <MenuItem>
