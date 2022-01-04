@@ -21,7 +21,7 @@ export const App = () => {
                     <Skills/>
                     <Works/>
                     <Footer/>
-                    <div>Hello Motherfucker</div>c
+                    <div>Hello Motherfucker!</div>c
                 </Flex>
             </Center>
         </ChakraProvider>
