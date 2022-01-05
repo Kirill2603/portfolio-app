@@ -19,6 +19,7 @@ export const App = () => {
                     <Scene/>
                     <Hello/>
                     <Skills/>
+                    <Skills/>
                     <Works/>
                     <Footer/>
                     <div>Hello Motherfucker!</div>c
