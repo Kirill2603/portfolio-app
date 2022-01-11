@@ -1,11 +1,9 @@
 import React from "react";
 import {
     Box,
-    Button,
     Center,
     Flex,
     Link,
-    Spacer,
     Stack,
     Text,
     Menu,
@@ -13,24 +11,26 @@ import {
     MenuList,
     MenuItem,
     useColorMode,
-    useMediaQuery,
+    useMediaQuery, IconButton,
 } from '@chakra-ui/react'
 import {
     HamburgerIcon,
     SunIcon
 } from "@chakra-ui/icons";
-import {FaGithub} from "react-icons/fa";
+import {FaGithub, FaLinkedin} from "react-icons/fa";
 
 
 export const Header = () => {
 
     const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)')
 
-    const {colorMode, toggleColorMode} = useColorMode()
+    const {toggleColorMode} = useColorMode()
 
     if (isLargerThan1280) {
         return (<div>
-            <Flex justify={"center"}
+            <Flex justify={"space-between"}
+                  alignItems={"center"}
+
                   css={{ backdropFilter: 'blur(10px)' }}
                   position={"fixed"}
                   zIndex={1}
@@ -41,22 +41,21 @@ export const Header = () => {
                     <Text p={2} fontSize='3xl' fontWeight={'bold'}>Kirill Radobolsky</Text>
                 </Box>
 
-                <Spacer/>
+                <Stack direction='row' p={2} alignItems={"center"}>
 
-                <Link p={2} fontSize='2xl'>Projects</Link>
+                    <Center p={2}>
+                        <FaLinkedin />
+                        <Link pl={2} fontSize='2xl' href='https://github.com/Kirill2603'>LinkedIn</Link>
+                    </Center>
 
-                <Center p={2}>
-                    <FaGithub />
-                    <Link pl={2} fontSize='2xl' href='https://github.com/Kirill2603'>GitHub</Link>
-                </Center>
+                    <Center p={2}>
+                        <FaGithub />
+                        <Link pl={2} fontSize='2xl' href='https://github.com/Kirill2603'>GitHub</Link>
+                    </Center>
 
-                <Spacer/>
-                <Spacer/>
 
-                <Stack direction='row' p={2}>
-                    <Button
-                        onClick={toggleColorMode}
-                        leftIcon={<SunIcon/>} variant='solid' />
+                    <IconButton aria-label={"set mode"} icon={<SunIcon/>} onClick={toggleColorMode}/>
+
                 </Stack>
 
             </Flex>
@@ -75,11 +74,8 @@ export const Header = () => {
                <Text p={2} fontSize='xl' fontWeight={'bold'} >Kirill Radobolsky</Text>
            </Box>
 
-           <Stack direction='row' p={2}>
-               <Button
-                   onClick={toggleColorMode}
-                   leftIcon={<SunIcon/>} variant='solid'>
-               </Button>
+           <Stack direction='row' p={2} alignItems={"center"} >
+               <IconButton aria-label={"set mode"} icon={<SunIcon/>} onClick={toggleColorMode}/>
 
                <Menu>
                    <MenuButton
@@ -94,7 +90,7 @@ export const Header = () => {
                    >
                        <HamburgerIcon />
                    </MenuButton>
-                   <MenuList>
+                   <MenuList margin={0}>
                        <MenuItem>
                            <Center p={2}>
                                <FaGithub />
@@ -102,7 +98,10 @@ export const Header = () => {
                            </Center>
                        </MenuItem>
                        <MenuItem>
-                           <Link p={2}>Projects</Link>
+                           <Center p={2}>
+                               <FaLinkedin />
+                               <Link pl={2} href='https://github.com/Kirill2603'>LinkedIn</Link>
+                           </Center>
                        </MenuItem>
                    </MenuList>
                </Menu>
