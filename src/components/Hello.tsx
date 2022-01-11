@@ -9,11 +9,11 @@ function Hello() {
                         Hello!
                     </Code>
                     <Code p={2} mb={2} colorScheme={"green"} fontSize={'20px'}>
-                        I am Frontend Developer from Minsk
+                        I'm Front End Web Developer based in Minsk
                     </Code>
                     <Alert status='success' variant='solid'>
                         <AlertIcon />
-                        Data uploaded to the server. Fire on!
+                        I enjoy building beautiful responsive websites and apps
                     </Alert>
                     <Flex pt={5} justify={"space-between"}>
                         <Box pr={5}>

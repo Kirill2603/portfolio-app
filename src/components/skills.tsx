@@ -5,7 +5,7 @@ export const Skills = () => {
     return (
         <>
 
-            <Text pt={2} pb={2} fontSize='3xl' fontWeight={'bold'}>My skills</Text>
+            <Text pt={2} pb={2} fontSize='3xl' fontWeight={'bold'}>Skills</Text>
 
 
 
