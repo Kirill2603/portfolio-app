@@ -56,9 +56,7 @@ export const Header = () => {
                 <Stack direction='row' p={2}>
                     <Button
                         onClick={toggleColorMode}
-                        leftIcon={<SunIcon/>} variant='solid'>
-                        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-                    </Button>
+                        leftIcon={<SunIcon/>} variant='solid' />
                 </Stack>
 
             </Flex>
