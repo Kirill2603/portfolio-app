@@ -1,15 +1,24 @@
 import React from "react";
-import {Box, Center, Grid, GridItem, Text} from '@chakra-ui/react'
+import { Center, Grid, GridItem, Text} from '@chakra-ui/react'
 import {Icon} from "@chakra-ui/icons";
 import {FaGit, FaReact} from "react-icons/fa";
 import {SiChakraui, SiRedux, SiTypescript} from "react-icons/si";
 
-export const Technologies = () => {
+
+type TechnologiesPropsType = {
+    fr: number
+}
+
+export const Technologies = (props: TechnologiesPropsType) => {
+
+    const repeat = `repeat (${props.fr}, 1fr)`
+    console.log(repeat)
+
     return (
         <>
             <Text pt={10} pb={2} fontSize='3xl' fontWeight={'bold'}>My top Tech Stack</Text>
 
-            <Grid templateColumns='repeat(5, 1fr)' gap={6} pt={5} pb={5}>
+            <Grid templateColumns={`repeat(${props.fr}, 1fr)`} gap={6} pt={5} pb={5}>
                 <GridItem>
                     <Center>
                         <Icon as={FaReact} w={20} h={20}/>

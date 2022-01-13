@@ -12,6 +12,8 @@ export const App = () => {
 
     const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)')
 
+    const fr = isLargerThan1280 ? 5 : 3
+
     return (
         <ChakraProvider resetCSS>
             <Center>
@@ -20,7 +22,7 @@ export const App = () => {
                     <Scene/>
                     <Hello/>
                     <Skills/>
-                    <Technologies />
+                    <Technologies fr={fr}/>
                     <Works/>
                     <Footer/>
                 </Flex>
