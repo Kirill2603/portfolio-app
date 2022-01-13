@@ -6,6 +6,7 @@ import {Skills} from "./skills";
 import {Works} from "./works";
 import {Footer} from "./Footer";
 import React from "react";
+import {Technologies} from "./technologies";
 
 export const App = () => {
 
@@ -19,6 +20,7 @@ export const App = () => {
                     <Scene/>
                     <Hello/>
                     <Skills/>
+                    <Technologies />
                     <Works/>
                     <Footer/>
                 </Flex>

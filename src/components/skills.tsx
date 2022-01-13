@@ -15,7 +15,7 @@ export const Skills = () => {
                 <Box bg='green.300' w={'15%'} alignItems={"center"} textAlign={"center"}>
                     HTML
                 </Box>
-                <Progress colorScheme='green' height='32px' value={90} hasStripe w={"75%"}/>
+                <Progress colorScheme='green' height='32px' value={90} hasStripe w={"75%"} />
                 <Box  w={'10%'} alignItems={"center"} textAlign={"center"}>
                     90 %
                 </Box>
@@ -65,9 +65,9 @@ export const Skills = () => {
                 <Box bg='green.300' w={'15%'} alignItems={"center"} textAlign={"center"}>
                     Redux
                 </Box>
-                <Progress colorScheme='green' height='32px' value={80} hasStripe w={"75%"}/>
+                <Progress colorScheme='green' height='32px' value={75} hasStripe w={"75%"}/>
                 <Box  w={'10%'} alignItems={"center"} textAlign={"center"}>
-                    80 %
+                    75 %
                 </Box>
             </Flex>
 
@@ -77,7 +77,7 @@ export const Skills = () => {
                 </Box>
                 <Progress colorScheme='green' height='32px' value={60} hasStripe w={"75%"}/>
                 <Box  w={'10%'} alignItems={"center"} textAlign={"center"}>
-                    80 %
+                    60 %
                 </Box>
             </Flex>
 
@@ -87,7 +87,7 @@ export const Skills = () => {
                 </Box>
                 <Progress colorScheme='green' height='32px' value={50} hasStripe w={"75%"}/>
                 <Box  w={'10%'} alignItems={"center"} textAlign={"center"}>
-                    80 %
+                    50 %
                 </Box>
             </Flex>
 
