@@ -30,7 +30,7 @@ export const Works = () => {
                                 letterSpacing='wide'
                                 fontSize='ml'>
                               <FaGithub />
-                              <Link p={2} href='https://github.com/Kirill2603'>Source</Link>
+                              <Link p={2} href='https://github.com/Kirill2603/mytodolist'>Source</Link>
                           </Flex>
                           <Flex alignItems={"center"}
                                 color='gray.500'
@@ -38,7 +38,7 @@ export const Works = () => {
                                 letterSpacing='wide'
                                 fontSize='ml'>
                               <FaEye />
-                              <Link p={2} href='https://github.com/Kirill2603'>Look</Link>
+                              <Link p={2} href='https://github.com/Kirill2603/mytodolist'>Look</Link>
 
                           </Flex>
                       </Box>
@@ -47,7 +47,7 @@ export const Works = () => {
 
               <GridItem  borderWidth='1px' borderRadius='lg' overflow='hidden'>
 
-                  <Text pt={2} pb={2} fontSize='3xl' fontWeight={'bold'} textAlign={"center"}>Todo List</Text>
+                  <Text pt={2} pb={2} fontSize='3xl' fontWeight={'bold'} textAlign={"center"}>Social network</Text>
 
                   <Image w={"100%"} src={'https://bit.ly/2Z4KKcF'}/>
 
@@ -62,7 +62,7 @@ export const Works = () => {
                                     letterSpacing='wide'
                                     fontSize='ml'>
                                   <FaGithub />
-                                  <Link p={2} href='https://github.com/Kirill2603'>Source</Link>
+                                  <Link p={2} href='https://github.com/Kirill2603/sotial_network'>Source</Link>
                               </Flex>
                               <Flex alignItems={"center"}
                                     color='gray.500'
@@ -70,7 +70,7 @@ export const Works = () => {
                                     letterSpacing='wide'
                                     fontSize='ml'>
                                   <FaEye />
-                                  <Link p={2} href='https://github.com/Kirill2603'>Look</Link>
+                                  <Link p={2} href='https://github.com/Kirill2603/sotial_network'>Look</Link>
 
                           </Flex>
                       </Box>
@@ -94,7 +94,7 @@ export const Works = () => {
                                 letterSpacing='wide'
                                 fontSize='ml'>
                               <FaGithub />
-                              <Link p={2} href='https://github.com/Kirill2603'>Source</Link>
+                              <Link p={2} href='https://github.com/Kirill2603/counter'>Source</Link>
                           </Flex>
                           <Flex alignItems={"center"}
                                 color='gray.500'
@@ -102,7 +102,7 @@ export const Works = () => {
                                 letterSpacing='wide'
                                 fontSize='ml'>
                               <FaEye />
-                              <Link p={2} href='https://github.com/Kirill2603'>Look</Link>
+                              <Link p={2} href='https://github.com/Kirill2603/counter'>Look</Link>
 
                           </Flex>
                       </Box>
