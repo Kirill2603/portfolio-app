@@ -17,7 +17,7 @@ export const Works = () => {
 
                   <Text pt={2} pb={2} fontSize='3xl' fontWeight={'bold'} textAlign={"center"}>Todo List</Text>
 
-                  <Image w={"100%"} src={'https://bit.ly/2Z4KKcF'}/>
+                  <Image w={"100%"} h={'20vh'} src={'https://github.com/Kirill2603/portfolio-app/blob/master/src/assets/Todo.png?raw=true'}/>
 
                   <Box p='3'>
                       <Box display='flex' alignItems='center' justifyContent={"space-between"}>
@@ -49,7 +49,7 @@ export const Works = () => {
 
                   <Text pt={2} pb={2} fontSize='3xl' fontWeight={'bold'} textAlign={"center"}>Social network</Text>
 
-                  <Image w={"100%"} src={'https://bit.ly/2Z4KKcF'}/>
+                  <Image w={"100%"} h={'20vh'} src={'https://github.com/Kirill2603/portfolio-app/blob/master/src/assets/Social.png?raw=true'}/>
 
                   <Box p='3'>
                       <Box display='flex' alignItems='center' justifyContent={"space-between"}>
@@ -81,7 +81,7 @@ export const Works = () => {
 
                   <Text pt={2} pb={2} fontSize='3xl' fontWeight={'bold'} textAlign={"center"}>Counter</Text>
 
-                  <Image w={"100%"} src={'https://bit.ly/2Z4KKcF'}/>
+                  <Image w={"100%"} h={'20vh'} src={'https://github.com/Kirill2603/portfolio-app/blob/master/src/assets/Counter.png?raw=true'}/>
 
                   <Box p='3'>
                       <Box display='flex' alignItems='center' justifyContent={"space-between"}>
