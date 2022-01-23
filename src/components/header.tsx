@@ -11,7 +11,7 @@ import {
     MenuList,
     MenuItem,
     useColorMode,
-    useMediaQuery, IconButton,
+    useMediaQuery, IconButton, ButtonGroup,
 } from '@chakra-ui/react'
 import {
     HamburgerIcon,
@@ -75,36 +75,40 @@ export const Header = () => {
            </Box>
 
            <Stack direction='row' p={2} alignItems={"center"} >
-               <IconButton aria-label={"set mode"} icon={<SunIcon/>} onClick={toggleColorMode}/>
+               <ButtonGroup>
+                   <IconButton aria-label={"set mode"} icon={<SunIcon/>} onClick={toggleColorMode}/>
 
-               <Menu>
-                   <MenuButton
-                       px={4}
-                       py={2}
-                       transition='all 0.2s'
-                       borderRadius='md'
-                       borderWidth='1px'
-                       _hover={{ bg: 'gray.400' }}
-                       _expanded={{ bg: 'blue.400' }}
-                       _focus={{ boxShadow: 'outline' }}
-                   >
-                       <HamburgerIcon />
-                   </MenuButton>
-                   <MenuList margin={0}>
-                       <MenuItem>
-                           <Center p={2}>
-                               <FaGithub />
-                               <Link pl={2} href='https://github.com/Kirill2603'>GitHub</Link>
-                           </Center>
-                       </MenuItem>
-                       <MenuItem>
-                           <Center p={2}>
-                               <FaLinkedin />
-                               <Link pl={2} href='https://github.com/Kirill2603'>LinkedIn</Link>
-                           </Center>
-                       </MenuItem>
-                   </MenuList>
-               </Menu>
+                   <Menu>
+                       <MenuButton
+                           px={4}
+                           py={2}
+                           transition='all 0.2s'
+                           borderRadius='md'
+                           borderWidth='1px'
+                           _hover={{ bg: 'gray.400' }}
+                           _expanded={{ bg: 'blue.400' }}
+                           _focus={{ boxShadow: 'outline' }}
+                       >
+                           <HamburgerIcon />
+                       </MenuButton>
+                       <MenuList margin={0}>
+                           <MenuItem>
+                               <Center p={2}>
+                                   <FaGithub />
+                                   <Link pl={2} href='https://github.com/Kirill2603'>GitHub</Link>
+                               </Center>
+                           </MenuItem>
+                           <MenuItem>
+                               <Center p={2}>
+                                   <FaLinkedin />
+                                   <Link pl={2} href='https://www.linkedin.com/in/kirill-radobolsky-66131222a'>LinkedIn</Link>
+                               </Center>
+                           </MenuItem>
+                       </MenuList>
+                   </Menu>
+               </ButtonGroup>
+
+
            </Stack>
 
                </Flex>

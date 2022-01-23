@@ -15,11 +15,11 @@ function Hello() {
                         <AlertIcon />
                         I enjoy building beautiful responsive websites and apps
                     </Alert>
-                    <Flex pt={5} justify={"space-between"}>
+                    <Flex pt={10} justify={"space-between"} pb={5}>
                         <Box pr={5}>
-                            <Text fontSize='3xl'>Krill Radobolsky</Text>
-                            <Text fontSize='2xl' wordBreak={"break-word"} width={"80%"}>Digital Craftsman
-                                ( Developer / Designer )</Text>
+                            <Text fontSize='3xl'>Front-end developer</Text>
+                            <Text fontSize='2xl' wordBreak={"break-word"} width={"80%"}>
+                                With experience in creating Landing Pagesand SPA, using React(JS/TS), Redux, AXIOS/REST API</Text>
                         </Box>
                         <Avatar p={0.5} size={"2xl"} src={'https://avatars.githubusercontent.com/u/64753246?v=4'}/>
                     </Flex>
