@@ -12,7 +12,6 @@ type TechnologiesPropsType = {
 export const Technologies = (props: TechnologiesPropsType) => {
 
     const repeat = `repeat (${props.fr}, 1fr)`
-    console.log(repeat)
 
     return (
         <>
