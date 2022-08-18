@@ -1,0 +1,7 @@
+export { Hello } from 'components/Hello'
+export { Header } from 'components/Header'
+export { Scene } from 'components/Scene/Scene'
+export { Technologies } from 'components/Technologies'
+export { Skills } from 'components/Skills'
+export { Works } from 'components/Works'
+export { Footer } from 'components/Footer'

@@ -4,15 +4,14 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
 export const Scene = () => {
-
   return (
     <Canvas
       shadows
-      style={{ width: '100%', height: '40vh' }}
-      camera={{ position: [-10, 5, 12], fov: 40 }}>
+      style={{ width: '100%', height: '50vh' }}
+      camera={{ position: [-10, 5, 18], fov: 40 }}>
       <ambientLight intensity={.8} />
       <directionalLight
-        castShadow
+        castShadow={true}
         position={[2.5, 8, 5]}
         intensity={1.5}
         shadow-mapSize-width={1024}
