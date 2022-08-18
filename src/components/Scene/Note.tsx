@@ -24,7 +24,7 @@ type GLTFResult = GLTF & {
 };
 
 export function Note() {
-  const { nodes, materials } = useGLTF('/newNoteModel.gltf') as GLTFResult
+  const { nodes, materials } = useGLTF('/portfolio-app/newNoteModel.gltf') as GLTFResult
 
   const mesh = useRef<Group>(null)
 
@@ -81,4 +81,4 @@ export function Note() {
   )
 }
 
-useGLTF.preload('/newNoteModel.gltf')
+useGLTF.preload('/portfolio-app/newNoteModel.gltf')
