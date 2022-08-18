@@ -1,9 +1,9 @@
 import {Center, ChakraProvider, Flex, useMediaQuery} from "@chakra-ui/react";
 import {Header} from "./header";
-import {Scene} from "./scene";
+import {Scene} from "./Scene";
 import Hello from "./Hello";
 import {Skills} from "./skills";
-import {Works} from "./works";
+import {Works} from "./Works";
 import {Footer} from "./Footer";
 import React from "react";
 import {Technologies} from "./technologies";
@@ -21,9 +21,9 @@ export const App = () => {
                     <Header/>
                     <Scene/>
                     <Hello/>
-                    <Skills/>
                     <Technologies fr={fr}/>
                     <Works/>
+                    <Skills/>
                     <Footer/>
                 </Flex>
             </Center>
