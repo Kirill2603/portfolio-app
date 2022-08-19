@@ -1,6 +1,7 @@
 import React from 'react'
 import { Footer, Header, Hello, Scene, Skills, Technologies, Works } from './components'
 import { Center, Flex, useMediaQuery } from '@chakra-ui/react'
+import './app.css'
 
 export const App = () => {
 

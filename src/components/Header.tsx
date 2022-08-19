@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 import {
   Flex,
   Link,
@@ -17,7 +17,6 @@ import {
 } from '@chakra-ui/icons'
 import { FaGithub, FaLinkedin, FaRocket } from 'react-icons/fa'
 
-
 export const Header = () => {
 
   const [isLargerThan1280] = useMediaQuery('(min-width: 1280px)')
@@ -27,7 +26,7 @@ export const Header = () => {
   return (
     <Flex justify={'space-between'}
           alignItems={'center'}
-
+          py={isLargerThan1280 ? '' : '2'}
           css={{ backdropFilter: 'blur(10px)' }}
           position={'fixed'}
           zIndex={1}
@@ -47,7 +46,7 @@ export const Header = () => {
             </Link>
           </Button>
           <Button leftIcon={<FaLinkedin />}>
-            <Link href='https://www.linkedin.com/in/kirill-radobolsky-66131222a' target='_blank'>
+            <Link href='https://www.linkedin.com/in/kirill2603/' target='_blank'>
               LinkedIn
             </Link>
           </Button>
@@ -69,7 +68,7 @@ export const Header = () => {
                 GitHub
               </Button>
             </MenuItem>
-            <MenuItem as='a' href='https://www.linkedin.com/in/kirill-radobolsky-66131222a' target='_blank'>
+            <MenuItem as='a' href='https://www.linkedin.com/in/kirill2603/' target='_blank'>
               <Button leftIcon={<FaLinkedin />} variant='link' size='lg'>
                 LinkedIn
               </Button>
@@ -80,8 +79,8 @@ export const Header = () => {
               </Button>
             </MenuItem>
             <MenuDivider />
-            <MenuItem as='div'>
-              <Flex direction='row' alignItems='center'>
+            <MenuItem as='div' onClick={toggleColorMode}>
+              <Flex direction='row' alignItems='center' onClick={(event) => event.stopPropagation()}>
                 <Text fontSize='lg' fontWeight='semibold'>Dark theme: </Text>
                 <Switch pl={2} size='md' isChecked={colorMode === 'dark'} onChange={toggleColorMode} />
               </Flex>
