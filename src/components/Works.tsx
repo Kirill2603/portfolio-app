@@ -17,12 +17,22 @@ import chessImg from 'assets/Chess/1.jpg'
 import NativeCalc from 'assets/NativeCalculator/NativeCalculator.jpg'
 import githubSearchImg from 'assets/githubApi/githubApi.jpg'
 import TodoImg from 'assets/Todo.png'
+import NoiseImg from 'assets/Noise/noise.webp'
 
 export const Works = () => {
 
   const [isLargerThan1050] = useMediaQuery('(min-width: 1050px)')
 
   const projects = [
+    {
+      name: 'Noise App',
+      source: 'https://github.com/Kirill2603/react-noise',
+      look: 'https://react-noise.vercel.app/',
+      inProgress: false,
+      image: NoiseImg,
+      description: 'Choose a sound environment that helps you concentrate',
+      technologies: ['React', 'Redux Toolkit', 'TailwindCSS', 'TypeScript', 'DayJS'],
+    },
     {
       name: 'Calendar',
       source: 'https://github.com/Kirill2603/calendar',
@@ -85,7 +95,8 @@ export const Works = () => {
               {project.name}
             </Heading>
             <Flex overflow={'hidden'} justify='center'>
-              <Image backgroundSize='cover' maxHeight='xs' src={project.image} alt={project.name} transition='all 0.5s ease-out'
+              <Image backgroundSize='cover' maxHeight='xs' src={project.image} alt={project.name}
+                     transition='all 0.5s ease-out'
                      _hover={{ transform: 'scale(1.15)' }} />
             </Flex>
             <Flex p={2} justify='flex-start' alignItems='end'>
