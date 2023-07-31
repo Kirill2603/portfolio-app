@@ -23,6 +23,12 @@ export const Header = () => {
 
   const { colorMode, toggleColorMode } = useColorMode()
 
+  
+  const onPressNavigeteButton = (link: string | null) => {
+    link !== null && window.open(link, "_blank")
+  }
+
+
   return (
     <Flex justify={'space-between'}
           alignItems={'center'}
@@ -40,17 +46,17 @@ export const Header = () => {
 
       {isLargerThan1280 ?
         <ButtonGroup isAttached variant='solid'>
-          <Button leftIcon={<FaGithub />}>
+          <Button leftIcon={<FaGithub />} onClick={() => onPressNavigeteButton('https://github.com/Kirill2603')}>
             <Link href='https://github.com/Kirill2603' target='_blank'>
               GitHub
             </Link>
           </Button>
-          <Button leftIcon={<FaLinkedin />}>
+          <Button leftIcon={<FaLinkedin />} onClick={() => onPressNavigeteButton('https://www.linkedin.com/in/kirill2603/')}>
             <Link href='https://www.linkedin.com/in/kirill2603/' target='_blank'>
               LinkedIn
             </Link>
           </Button>
-          <Button leftIcon={<EmailIcon />}>
+          <Button leftIcon={<EmailIcon />} onClick={() => onPressNavigeteButton('mailto:k.radobolsky@gmail.com')}>
             <Link href='mailto:k.radobolsky@gmail.com' target='_blank'>
               Mail
             </Link>
