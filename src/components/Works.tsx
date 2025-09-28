@@ -1,163 +1,119 @@
 import React from 'react'
 import {
-  Box,
   Text,
   Image,
-  Badge,
-  Link,
   Flex,
   useMediaQuery,
   Heading,
-  Button,
   Divider,
+  Grid,
+  GridItem,
+  Box,
+  Badge,
+  Button,
+  Link,
 } from '@chakra-ui/react'
 import { FaEye, FaGithub } from 'react-icons/fa'
-import calendarImg from 'assets/Calendar/1.jpg'
-import chessImg from 'assets/Chess/1.jpg'
-import NativeCalc from 'assets/NativeCalculator/NativeCalculator.jpg'
-import githubSearchImg from 'assets/githubApi/githubApi.jpg'
-import TodoImg from 'assets/Todo.png'
-import NoiseImg from 'assets/Noise/noise.webp'
-import NoiseMobileImg from 'assets/NoiseMobile/noise_mobile.jpg'
+import { projects } from '../data'
+import { ImageSlider } from './ImageSlider'
 
 export const Works = () => {
-
   const [isLargerThan1050] = useMediaQuery('(min-width: 1050px)')
 
-  const projects: Array<{
-    name: string,
-    source: string | null,
-    look: string,
-    inProgress: boolean,
-    image: string,
-    description: string,
-    technologies: Array<string>,
-  }> = [
-      {
-        name: 'Noise Mobile',
-        source: null,
-        look: 'https://play.google.com/store/apps/details?id=com.noise.release&pli=1',
-        inProgress: false,
-        image: NoiseMobileImg,
-        description: 'Noise - is an application that allows you to enjoy the beauty and harmony of nature anytime, anywhere.',
-        technologies: ['Flutter', 'Dart', 'Block', 'Firebase', 'Hive', 'Lottie'],
-      },
-      {
-        name: 'Chess 3D',
-        source: 'https://github.com/Kirill2603/3d-chess-v2',
-        look: 'https://chesss-3d.netlify.app/',
-        inProgress: true,
-        image: chessImg,
-        description: 'Classic chess game with 3D view.',
-        technologies: ['React', 'ThreeJS', 'React Three Fiber', 'Redux Toolkit', 'ChakraUI', 'TypeScript'],
-      },
-      {
-        name: 'Calendar',
-        source: 'https://github.com/Kirill2603/calendar',
-        look: 'https://calendar-one-blush.vercel.app/',
-        inProgress: true,
-        image: calendarImg,
-        description: 'Calendar with a view of the month or year where you can leave your notes, as well as see the weather in your city for the next week',
-        technologies: ['React', 'Redux Toolkit', 'RTK Query', 'TailwindCSS', 'Express', 'MongoDB', 'TypeScript', 'DayJS'],
-      },
-      {
-        name: 'Noise App',
-        source: 'https://github.com/Kirill2603/react-noise',
-        look: 'https://react-noise.vercel.app/',
-        inProgress: false,
-        image: NoiseImg,
-        description: 'Choose a sound environment that helps you concentrate',
-        technologies: ['React', 'Redux Toolkit', 'TailwindCSS', 'TypeScript', 'DayJS'],
-      },
-      {
-        name: 'Github Search',
-        source: 'https://github.com/Kirill2603/paralect-test',
-        look: 'https://paralect-test-app.netlify.app/',
-        inProgress: false,
-        image: githubSearchImg,
-        description: 'Search information about the user and his repositories by Gidhub API',
-        technologies: ['React', 'Redux Toolkit', 'RTK Query', 'SCSS', 'TypeScript'],
-      },
-      {
-        name: 'React Native Calculator',
-        source: 'https://github.com/Kirill2603/native-calculator',
-        look: 'https://github.com/Kirill2603/native-calculator',
-        inProgress: false,
-        image: NativeCalc,
-        description: 'Simple React Native calculator app ',
-        technologies: ['React Native', 'SCSS', 'TypeScript'],
-      },
-      {
-        name: 'Todo App',
-        source: 'https://github.com/Kirill2603/mytodolist',
-        look: 'https://github.com/Kirill2603/mytodolist',
-        inProgress: false,
-        image: TodoImg,
-        description: 'To-do list with the ability to sort and search for tasks',
-        technologies: ['React', 'Redux', 'Axios', 'Thunk', 'Chakra UI', 'TypeScript'],
-      },
-
-    ]
-
-  const onPressNavigeteButton = (link: string | null) => {
-    link !== null && window.open(link, "_blank")
+  const onPressNavigateButton = (link: string | null) => {
+    link !== null && window.open(link, '_blank')
   }
-
 
   return (
     <>
-      <Text pt={2} fontSize='3xl' fontWeight={'bold'}>Works</Text>
-      <Flex flexWrap='wrap' justify='space-between'>
-        {projects.map(project =>
-          <Box
-            key={project.name}
-            boxSize={isLargerThan1050 ? '49%' : 'full'}
-            my={2}
-            borderWidth='2px'
-            borderRadius='lg'>
-            <Heading size='xl' textAlign='center' p={2}>
-              {project.name}
-            </Heading>
-            <Flex overflow={'hidden'} justify='center'>
-              <Image backgroundSize='cover' maxHeight='xs' src={project.image} alt={project.name}
-                transition='all 0.5s ease-out'
-                _hover={{ transform: 'scale(1.15)' }} />
+      <Text pt={2} fontSize='3xl' fontWeight={'bold'}>
+        Projects
+      </Text>
+      <Divider pb={5} opacity={0} />
+      <Grid gridTemplateColumns={isLargerThan1050 ? 'repeat(3, 1fr)' : '1fr'} gap={8}>
+        {projects.map(project => (
+          <GridItem key={project.id}>
+            <Flex
+              p={4}
+              gap={3}
+              flexDirection={'column'}
+              borderWidth='1px'
+              borderRadius='lg'
+              overflow='hidden'
+              bg='white'
+              _dark={{ bg: 'gray.800' }}
+              shadow='md'
+              transition='all 0.2s'
+              _hover={{ shadow: 'lg', transform: 'translateY(-2px)' }}>
+              {/* Project Header */}
+              <Flex direction='column' gap={2}>
+                <Flex align={'flex-start'} gap={4}>
+                  {project.icon && (
+                    <Image
+                      backgroundSize='cover'
+                      minW={'60px'}
+                      w={'60px'}
+                      h={'60px'}
+                      borderRadius='xl'
+                      overflow={'hidden'}
+                      src={project.icon}
+                      alt={project.title}
+                    />
+                  )}
+
+                  <Flex align={'flex-start'} flexDirection={'column'} flex='1'>
+                    <Heading size='lg' textAlign='left' mb={1}>
+                      {project.title}
+                    </Heading>
+                    <Heading size='sm' color={'gray.500'} mb={0}>
+                      {project.subtitle}
+                    </Heading>
+                  </Flex>
+                </Flex>
+                <Text fontSize='sm' color='gray.600' _dark={{ color: 'gray.300' }}>
+                  {project.description}
+                </Text>
+              </Flex>
+
+              {/* Image Slider */}
+              <Box >
+                <ImageSlider images={project.images} projectTitle={project.title} />
+              </Box>
+
+              {/* Technologies */}
+              <Box >
+                <Flex wrap='wrap' gap={2}>
+                  {project.technologies.map((tech, index) => (
+                    <Badge key={index} colorScheme='green' variant='subtle'>
+                      {tech}
+                    </Badge>
+                  ))}
+                </Flex>
+              </Box>
+
+              {/* Action Buttons */}
+              <Flex  gap={2} justify='flex-end'>
+                {project.source && (
+                  <Button
+                    leftIcon={<FaGithub />}
+                    size='sm'
+                    variant='outline'
+                    onClick={() => onPressNavigateButton(project.source)}>
+                    Source
+                  </Button>
+                )}
+                <Button
+                  leftIcon={<FaEye />}
+                  size='sm'
+                  colorScheme='blue'
+                  onClick={() => onPressNavigateButton(project.look)}>
+                  View
+                </Button>
+              </Flex>
             </Flex>
-            <Flex p={2} justify='flex-start' alignItems='end'>
-              {project?.source && <Button 
-                leftIcon={<FaGithub />} 
-                ml={1} 
-                size='md' 
-                colorScheme='teal' 
-                variant='ghost' 
-                onClick={() => onPressNavigeteButton(project.source)}>
-                <Link href={project.source} target='_blank'>
-                  Sourse
-                </Link>
-              </Button>}
-              <Button leftIcon={<FaEye />} ml={1} size='md' colorScheme='teal' variant='ghost' onClick={() => onPressNavigeteButton(project.look)} >
-                <Link href={project.look} target='_blank'>
-                  {project.source ? 'Look' : 'Look at google play'}
-                </Link>
-              </Button>
-              {project.inProgress && <Text w='full' textAlign='end'>App in development...</Text>}
-            </Flex>
-            <Divider />
-            <Flex direction='row' justify='flex-start' wrap='wrap' align='center'>
-              <Text fontSize='xl' fontWeight='bold' px={2}>
-                Stack:
-              </Text>
-              {project.technologies.map(technology =>
-                <Badge key={technology} variant='subtle' fontSize='sm' colorScheme='blue' my={1} mx={2}>
-                  {technology}
-                </Badge>,
-              )}
-            </Flex>
-            <Divider />
-            <Text px={2} fontSize='xl' fontWeight='normal'><b>Description:</b> {project.description}</Text>
-          </Box>,
-        )}
-      </Flex>
+          </GridItem>
+        ))}
+      </Grid>
     </>
   )
 }

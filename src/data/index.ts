@@ -1,0 +1,5 @@
+export { projects } from './projects'
+export { technologies } from './technologies'
+export { skills } from './skills'
+export { contacts } from './contacts'
+export { navigationItems } from './navigation'
